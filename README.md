@@ -110,27 +110,7 @@ OR
 - **Username**: `user`
 - **Password**: `user123`
 
-## API Endpoints
 
-### Authentication
-- `POST /api/auth/login` - Login with username and password
-- `POST /api/auth/logout` - Logout (requires authentication)
-
-### Grammar Check
-- `POST /api/grammar/check` - Check grammar and spelling (requires authentication)
-
-## Deployment
-
-### Backend Deployment
-
-Deploy the backend to:
-- Render.com
-- Railway.app
-- Vercel
-- Heroku
-- Any Node.js hosting platform
-
-Update the `baseUrl` in `lib/core/constants/api.dart` after deployment.
 
 ### Flutter App Deployment
 
@@ -139,64 +119,5 @@ Build APK:
 flutter build apk --release
 ```
 
-Build iOS:
-```bash
-flutter build ios --release
-```
 
-## Technologies Used
 
-### Frontend
-- Flutter
-- GetX (State Management & Navigation)
-- Dio (HTTP Client)
-- SharedPreferences (Local Storage)
-
-### Backend
-- Node.js
-- Express.js
-- OpenAI API
-- JWT (Authentication)
-
-## Development Guidelines
-
-### Controller Initialization Pattern
-
-Always initialize controllers at the top of each View:
-
-```dart
-final MyController controller = Get.isRegistered<MyController>()
-    ? Get.find<MyController>()
-    : Get.put(MyController());
-```
-
-### State Management Rules
-
-- ✅ Use Rx variables: `final count = 0.obs;`
-- ✅ Use Obx() for reactive UI updates
-- ✅ Use GetBuilder() for manual rebuilds
-- ❌ NEVER use setState
-- ❌ NEVER use GetX Bindings
-- ❌ NEVER use GoRouter
-
-### Constants Usage
-
-Always import from centralized constants:
-- `AppColors` for colors
-- `AppAssets` for asset paths
-- `Api` for API endpoints
-
-## Testing
-
-Run tests:
-```bash
-flutter test
-```
-
-## License
-
-This project is created for assessment purposes.
-
-## Contact
-
-For questions or issues, please contact the development team.
